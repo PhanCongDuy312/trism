@@ -24,7 +24,11 @@ for out in model.outputs:
   print(f"name: {out.name}, shape: {out.shape}, datatype: {out.dtype}\n")
 
 # Inference.
+# With normal infer
 outputs = model.run(data = [np.array(...)])
+
+# With async infer
+
 ```
 ## License
 [GNU AGPL v3.0](LICENSE).<br>
