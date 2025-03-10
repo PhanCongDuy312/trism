@@ -81,6 +81,12 @@ class TritonModel:
             "stream_timeout": (float, type(None)),
             "offset": int,
             "iterations": int,
+            "streaming_mode": bool,
+            "exclude_inputs_in_outputs":bool,
+            "lora_name": str,
+            "temperature": float,
+            "top_p": float,
+            "max_tokens": int
         }
 
         for attribute, expected_types in required_attributes.items():
@@ -98,9 +104,9 @@ class TritonModel:
         
     async def triton_run_async(self):
         sampling_parameters = {
-            "temperature": self.temperature,
-            "top_p": self.top_p,
-            "max_tokens": self.max_tokens
+            "temperature": str(self.temperature),
+            "top_p": str(self.top_p),
+            "max_tokens": str(self.max_tokens)
         }
         exclude_input_in_output = self.exclude_inputs_in_outputs
         prompts = self.input_prompts
