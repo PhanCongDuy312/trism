@@ -44,8 +44,6 @@ def inout(serverclient, model: str, version: str = "", *args, **kwds) -> Any:
   outputs = [Inout(name=out.name, shape=out.shape, dtype=out.datatype) for out in meta.outputs]
   return inputs, outputs
 
-
-
 def create_request(model_name, prompt, stream, request_id, sampling_parameters, exclude_input_in_output, send_parameters_as_tensor=True):
     inputs = []
     prompt_data = np.array([prompt.encode("utf-8")], dtype=np.object_)
