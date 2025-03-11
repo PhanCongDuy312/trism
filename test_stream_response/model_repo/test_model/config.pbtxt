@@ -1,0 +1,12 @@
+name: "deepseek_qwen_awq_1_5b"
+max_batch_size: 0
+backend: "vllm"
+model_transaction_policy {
+decoupled: true
+}
+instance_group [
+  {
+    count: 1
+    kind: KIND_MODEL
+  }
+]

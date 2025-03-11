@@ -1,0 +1,10 @@
+{
+    "model":"Qwen/Qwen2.5-1.5B",
+    "disable_log_requests": true,
+    "gpu_memory_utilization": 0.9,
+    "enforce_eager": true,
+    "dtype": "float16",
+    "tokenizer_mode": "auto",
+    "max_model_len":1024,
+    "max_num_batched_tokens":2048
+}
